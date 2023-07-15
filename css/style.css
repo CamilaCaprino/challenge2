@@ -1,0 +1,73 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+:root {
+    --color-fondo: #14164e;
+    --color-blanco: #fff;
+    --color-calculadora: #0a0b2c;
+    --color-btn: #e03131;
+    --color-btn-hover: #e7a3a3;
+}
+  
+/* cuerpo de mi html */
+body {
+    min-height: 100vh; /* altura minima */
+    background-color: var(--color-fondo);
+    display: grid;
+    place-items: center;
+}
+/* base de la calculadora */
+.calculadora {
+    background-color: var(--color-calculadora);
+    color: var(--color-blanco);
+    width: 350px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: .5rem; /* separacion de los botones */
+}
+/* pantalla de la calculadora */
+.pantalla {
+    grid-column: 1 / -1;
+    background-color: var(--color-fondo);
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+    overflow-x: auto; /* en caso de desbordamiento al ingresar muchos digitos */
+}
+/* clase de los botones */
+.btn {
+    background-color: var(--color-calculadora);
+    color: var(--color-blanco);
+    border: 0;
+    padding: 1.5rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-fondo);
+}
+/* disposicion de las columnas del 0 y el = */
+#cero {
+    grid-column: span 2;
+}
+
+#igual {
+    grid-row: span 2;
+    background-color: var(--color-btn);
+}
+
+#igual:hover {
+    background-color: var(--color-btn-hover);
+}
